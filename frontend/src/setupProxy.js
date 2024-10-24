@@ -6,7 +6,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: `${REACT_APP_BASE_URL}`,
+      target: 'https://food-delivery-app-tup8.onrender.com',
       changeOrigin: true,
     })
   );
