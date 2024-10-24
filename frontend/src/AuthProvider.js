@@ -1,6 +1,6 @@
 import { useContext, createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+
 
 
 const AuthContext = createContext();
@@ -19,7 +19,7 @@ const AuthProvider = ({ children }) => {
         body: JSON.stringify(data),
       });
       const res = await response.json();
-      console.log("res:",res);
+      console.log("res:",res);  
       console.log("check:",res);
       if (res) {
         setUser(res.user);

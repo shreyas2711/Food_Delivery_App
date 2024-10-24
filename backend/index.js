@@ -20,12 +20,12 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 
-// const cors = require('cors');
+const cors = require('cors');
 
-// app.use(cors({
-//     origin: 'http://localhost:3000',
-//     credentials: true 
-//   }));
+app.use(cors({
+    origin: `${CROSS_URL}`,
+    credentials: true 
+  }));
 
 const db = new Client({
     connectionString: process.env.DATABASE_URL,
