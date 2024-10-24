@@ -10,7 +10,6 @@ const driverRoutes = require('./routes/driverRoutes');
 const menuRoutes = require('./routes/menuRoutes');
 const port = 4000;
 require("dotenv").config();
-const cors = require('cors');
 const orderRoutes = require('./routes/orderRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 
