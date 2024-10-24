@@ -13,7 +13,7 @@ const AuthProvider = ({ children }) => {
   
   const loginAction = async (data) => {
     try {
-      const response = await axios.post(`/api/user/signin`,data, {
+      const response = await axios.post(`${baseUrl}/api/user/signin`,data, {
         headers: {
           "Content-Type": "application/json",
         },
