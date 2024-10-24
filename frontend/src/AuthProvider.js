@@ -6,12 +6,14 @@ import axios from 'axios';
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
+  const baseUrl = process.env.REACT_APP_BASE_URL;
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem("site") || "");
   const navigate = useNavigate();
+  
   const loginAction = async (data) => {
     try {
-      const response = await axios.post("/api/user/signin",data, {
+      const response = await axios.post(`/api/user/signin`,data, {
         headers: {
           "Content-Type": "application/json",
         },

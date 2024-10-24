@@ -19,9 +19,10 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 const cors = require('cors');
-
+const baseUrl = process.env.CROSS_URL;
+console.log("baseurl:",baseUrl);
 app.use(cors({
-    origin: `${process.env.CROSS_URL}`,
+    origin: `${baseUrl}`,
     credentials: true 
   }));
 
