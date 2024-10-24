@@ -1,6 +1,6 @@
 import { useContext, createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import axios from 'axios';
 
 
 const AuthContext = createContext();
@@ -11,14 +11,14 @@ const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const loginAction = async (data) => {
     try {
-      const response = await fetch("/api/user/signin", {
-        method: "POST",
+      const response = await axios.post("/api/user/signin",data, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        withCredentials: true,
+     
       });
-      const res = await response.json();
+      const res = await response.data;
       console.log("res:",res);  
       console.log("check:",res);
       if (res) {
