@@ -18,7 +18,7 @@ const AuthProvider = ({ children }) => {
         withCredentials: true,
      
       });
-      const res = await response.data;
+      const res = response.data;
       console.log("res:",res);  
       console.log("check:",res);
       if (res) {
