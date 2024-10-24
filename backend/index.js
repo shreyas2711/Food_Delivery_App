@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 const cors = require('cors');
 
 app.use(cors({
-    origin: `${CROSS_URL}`,
+    origin: `${process.env.CROSS_URL}`,
     credentials: true 
   }));
 
