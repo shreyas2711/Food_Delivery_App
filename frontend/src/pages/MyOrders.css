@@ -1,0 +1,11 @@
+
+
+.main-container{
+    margin-top: 10rem;
+    margin-left: 10rem;
+}
+
+.order-card{
+    display: flex;
+    gap: 2rem;
+}

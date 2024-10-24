@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* .body{
+    background-color: rgb(71, 71, 245);
+} */
+/* 
+html{
+    background-color: rgb(71, 71, 245);
+} */
+
+
+
+.login-class{
+    margin: 11rem 28rem;
+    width: 31rem;
+    height: 20rem;
+}
+
+form{
+    background-color: white;
+    /* height: 20rem; */
+    padding: 8rem;
+
+}
+
+.login-button{
+    margin: 1rem 4rem;
+    margin-top: 2rem;
+    margin-left: 51px;
+    height: 36px;
+    width: 4rem;
+    border-width: 2px;
+    border-radius: 3px;
+    background: #3483e2;
+    color: white;
+}
+
+.login-button:hover{
+    cursor: pointer;
+    background-color: #1c3a5e;
+    transition: 0.3s;
+    color: white;
+}
+
+.login-inputs{
+    /* margin-top: 3rem; */
+}
