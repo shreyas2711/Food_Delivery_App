@@ -3,7 +3,7 @@ import { CREATE_ORDER_FAIL, CREATE_ORDER_REQUEST, CREATE_ORDER_SUCCESS, GET_ORDE
 
 export const OrderAction = (orderData) => async (dispatch) => {
 
-   const baseUrl = process.env.CROSS_URL;
+   const baseUrl = process.env.REACT_APP_BASE_URL;
 
     dispatch({ type: CREATE_ORDER_REQUEST });
     try {

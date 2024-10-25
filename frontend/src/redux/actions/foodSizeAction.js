@@ -3,7 +3,7 @@ import { FOODSIZE_LOAD_FAIL, FOODSIZE_LOAD_REQUEST, FOODSIZE_LOAD_SUCCESS } from
 
 export const GetFoodSizeAction = ()=>async(dispatch)=>{
 
-    const baseUrl = process.env.CROSS_URL;
+    const baseUrl = process.env.REACT_APP_BASE_URL;
 
     dispatch({type:FOODSIZE_LOAD_REQUEST});
     try{
