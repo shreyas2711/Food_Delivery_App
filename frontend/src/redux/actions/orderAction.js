@@ -2,9 +2,12 @@ import axios from "axios";
 import { CREATE_ORDER_FAIL, CREATE_ORDER_REQUEST, CREATE_ORDER_SUCCESS, GET_ORDER_FAIL, GET_ORDER_REQUEST } from "../constants/orderConstants";
 
 export const OrderAction = (orderData) => async (dispatch) => {
+
+   const baseUrl = process.env.CROSS_URL;
+
     dispatch({ type: CREATE_ORDER_REQUEST });
     try {
-      const { data } = await axios.post('/api/order/create', orderData);
+      const { data } = await axios.post(`${baseUrl}/api/order/create`, orderData);
       dispatch({
         type: CREATE_ORDER_SUCCESS,
         payload: data

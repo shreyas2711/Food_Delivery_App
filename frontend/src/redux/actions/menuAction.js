@@ -6,10 +6,10 @@ import { FOODSIZE_LOAD_FAIL, FOODSIZE_LOAD_REQUEST, FOODSIZE_LOAD_SUCCESS } from
 
 
 export const GetMenuAction = ()=>async(dispatch)=>{
-
+    const baseUrl = process.env.CROSS_URL;
     dispatch({type:MENU_LOAD_REQUEST});
     try{
-        const {data} = await axios.get(`/api/menu/show`);
+        const {data} = await axios.get(`${baseUrl}/api/menu/show`);
         console.log("Menu in action:",data);
        
         dispatch({
