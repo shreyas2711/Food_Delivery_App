@@ -22,11 +22,10 @@ const AuthProvider = ({ children }) => {
       });
       const res = response.data;
       console.log("res:",res);  
-      console.log("check:",res);
       if (res) {
         setUser(res.user);
         setToken(res.token);
-        localStorage.setItem("site", res.token);
+        localStorage.setItem("token", res.token);
         navigate("/home");
         return;
       }
@@ -39,7 +38,7 @@ const AuthProvider = ({ children }) => {
   const logOut = () => {
     setUser(null);
     setToken("");
-    localStorage.removeItem("site");
+    localStorage.removeItem("token");
     navigate("/");
   };
 
