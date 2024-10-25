@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
         withCredentials: true,
      
       });
-      const res = response.data;
+      const res = await response.data;
       console.log("res:",res);  
       if (res) {
         setUser(res.user);
