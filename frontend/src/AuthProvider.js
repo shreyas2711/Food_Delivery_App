@@ -8,19 +8,19 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem("site") || "");
+  const [token, setToken] = useState(localStorage.getItem("token") || "");
   const navigate = useNavigate();
   
   const loginAction = async (data) => {
     try {
-      const response = await axios.post(`/api/user/signin`,data, {
+      const response = await axios.post(`${baseUrl}/api/user/signin`,data, {
         headers: {
           "Content-Type": "application/json",
         },
         withCredentials: true,
      
       });
-      const res = await response.data;
+      const res =  response.data;
       console.log("res:",res);  
       if (res) {
         setUser(res.user);
