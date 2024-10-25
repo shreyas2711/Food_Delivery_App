@@ -4,10 +4,16 @@ import { CREATE_ORDER_FAIL, CREATE_ORDER_REQUEST, CREATE_ORDER_SUCCESS, GET_ORDE
 export const OrderAction = (orderData) => async (dispatch) => {
 
    const baseUrl = process.env.REACT_APP_BASE_URL;
-
+   const token = localStorage.getItem('token');
     dispatch({ type: CREATE_ORDER_REQUEST });
     try {
-      const { data } = await axios.post(`${baseUrl}/api/order/create`, orderData);
+      const { data } = await axios.post(`${baseUrl}/api/order/create`, orderData, { 
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        withCredentials: true
+      })
       dispatch({
         type: CREATE_ORDER_SUCCESS,
         payload: data
