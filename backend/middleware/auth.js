@@ -53,4 +53,4 @@ exports.isAuthenticated = (db) => async (req, res, next) => {
         console.error('Error in isAuthenticated middleware:', error);
         return res.status(401).json({ success: false, error: 'Unauthorized' });
     }
-};
+}; 

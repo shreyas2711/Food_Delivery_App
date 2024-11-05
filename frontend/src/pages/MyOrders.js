@@ -26,8 +26,16 @@ function MyOrders() {
   const [Razorpay] = useRazorpay();
   useEffect(() => {
     const getOrders = async () => {
+      const token = localStorage.getItem('token');
       try {
-        const response = await fetch('/api/order/show');
+        const response = await fetch('/api/order/show',
+          { 
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`
+            },
+            withCredentials: true
+          });
         if (!response.ok) {
           throw new Error('Failed to fetch orders');
         }

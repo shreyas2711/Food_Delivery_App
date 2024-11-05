@@ -1,50 +1,82 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* .body{
-    background-color: rgb(71, 71, 245);
-} */
-/* 
-html{
-    background-color: rgb(71, 71, 245);
+/* html, body {
+    height: 100%;
 } */
 
-
-
-.login-class{
-    margin: 11rem 28rem;
-    width: 31rem;
-    height: 20rem;
+.login-container {
+    background: linear-gradient(rgba(172, 165, 165, 0.5), rgba(224, 217, 217, 0.5)), 
+    url('https://img.freepik.com/free-photo/top-view-circular-food-frame_23-2148723455.jpg') no-repeat center center fixed; /* Ensure it stays fixed */
+    background-size: cover; /* Ensures the image covers the entire background */
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-form{
-    background-color: white;
-    /* height: 20rem; */
-    padding: 8rem;
-
+/* Login Card Container */
+.login-card {
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    /* margin-top: 18rem; */
 }
 
-.login-button{
-    margin: 1rem 4rem;
-    margin-top: 2rem;
-    margin-left: 51px;
-    height: 36px;
-    width: 4rem;
-    border-width: 2px;
-    border-radius: 3px;
-    background: #3483e2;
-    color: white;
+/* Form elements */
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
 }
 
-.login-button:hover{
+.form-control {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-control label {
+    font-size: 14px;
+    color: #555;
+}
+
+.form-control input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
-    background-color: #1c3a5e;
-    transition: 0.3s;
-    color: white;
+    transition: background-color 0.3s;
 }
 
-.login-inputs{
-    /* margin-top: 3rem; */
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Error Messages */
+.error-msg {
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+    display: none;
 }

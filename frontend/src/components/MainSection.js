@@ -9,6 +9,7 @@ import IncDecCounter from './IncDecCounter';
 import { OrderAction } from '../redux/actions/orderAction';
 import NavigationBar from './NavigationBar';
 
+
 function MainSection() {
   const dispatch = useDispatch();
   const { menu, loading } = useSelector((state) => state.loadMenu);

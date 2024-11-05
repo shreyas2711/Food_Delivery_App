@@ -102,6 +102,7 @@
 
 import { useState } from "react";
 import { useAuth } from "../AuthProvider";
+import './Login.css'
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -128,38 +129,45 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmitEvent}>
-      <div className="form_control">
-        <label htmlFor="user-email">Email:</label>
-        <input
-          type="email"
-          id="user-email"
-          name="email"
-          placeholder="example@yahoo.com"
-          aria-describedby="user-email"
-          aria-invalid="false"
-          onChange={handleInput}
-        />
-        <div id="user-email" className="sr-only">
-          Please enter a valid username. It must contain at least 6 characters.
-        </div>
+    <div className="login-container">
+    <div className="login-card">
+  <h2>Login</h2>
+  <form onSubmit={handleSubmitEvent}>
+    <div className="form-control">
+      <label htmlFor="user-email">Email:</label>
+      <input
+        type="email"
+        id="user-email"
+        name="email"
+        placeholder="example@yahoo.com"
+        aria-describedby="user-email"
+        aria-invalid="false"
+        onChange={handleInput}
+      />
+      <div id="user-email" className="error-msg">
+        Please enter a valid email address.
       </div>
-      <div className="form_control">
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          aria-describedby="user-password"
-          aria-invalid="false"
-          onChange={handleInput}
-        />
-        <div id="user-password" className="sr-only">
-          your password should be more than 6 character
-        </div>
+    </div>
+    <div className="form-control">
+      <label htmlFor="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Your password"
+        aria-describedby="user-password"
+        aria-invalid="false"
+        onChange={handleInput}
+      />
+      <div id="user-password" className="error-msg">
+        Password should be at least 6 characters.
       </div>
-      <button className="btn-submit">Submit</button>
-    </form>
+    </div>
+    <button className="btn-submit">Login</button>
+  </form>
+</div>
+</div>
+
   );
 };
 
